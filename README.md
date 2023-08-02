@@ -26,17 +26,6 @@
 <a><img src="https://user-images.githubusercontent.com/45755611/138098501-b505b1d0-8282-4b42-8869-68f9f70a8d93.png" align="left" height="844" width="390" ></a></h2>
 Лента новостей в текущей версии приложения выводит на экран посты, на которые подписан пользователь. С помощью запроса, который выглядит в виде ссылки, содержащем токен пользователя и ключи, приходят результаты в виде JSON файла, который парсится в модель данных, представляющих один новостной пост.
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<h2> Профиль
-<a><img src="https://user-images.githubusercontent.com/45755611/138098663-7af12969-092f-48cc-a585-a09d128179de.png" align="right" height="844" width="390" ></a></h2>
-
-Профиль состоит из аватарки пользователя в круглой рамке, а так же имени и фамилии.
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><h2> Остальные вкладки</h2>
-<a><img src="https://user-images.githubusercontent.com/45755611/138098738-f35fa875-ad56-41d9-88da-d36b6bc2e7f6.png" align="left" height="506" width="234" ></a>
-<a><img src="https://user-images.githubusercontent.com/45755611/138098754-aa6e19d9-585a-4966-b9d3-791dd5e85a87.png" align="left" height="506" width="234" ></a>
-<a><img src="https://user-images.githubusercontent.com/45755611/138098762-730200e9-234f-4ca9-bc61-7840fffd2e5b.png" align="left" height="506" width="234" ></a>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <br><br><h2>Итоги</h2>
 Создание такого большого (нового и полноценного) приложения ВК для iOS требует очень много временных затрат, усилий и знаний. Это долгий путь, который по итогу может привести к созданию отличного кастомного приложения с гибкими настройками.
