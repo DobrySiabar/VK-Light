@@ -1,6 +1,5 @@
-
 import Foundation
-import VK_ios_sdk
+import VKSdkFramework
 
 protocol AuthenticationServiceDelegate: AnyObject {
     func authenticationServiceShouldShow(viewController: UIViewController)
