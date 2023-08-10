@@ -1,6 +1,6 @@
 
 import UIKit
-import VK_ios_sdk
+import VKSdkFramework
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

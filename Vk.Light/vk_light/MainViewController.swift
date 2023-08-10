@@ -1,13 +1,11 @@
-
 import UIKit
 
-class StarterViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var authenticationService: AuthenticationService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         authenticationService = AuthenticationService.shared
         authenticationService.delegate = self
     }
@@ -17,7 +15,7 @@ class StarterViewController: UIViewController {
     }
 }
 
-extension StarterViewController: AuthenticationServiceDelegate {
+extension MainViewController: AuthenticationServiceDelegate {
     
     func authenticationServiceShouldShow(viewController: UIViewController) {
         let window = UIApplication.shared.windows.first
@@ -33,6 +31,5 @@ extension StarterViewController: AuthenticationServiceDelegate {
     }
     
     func authenticationServiceSignInDidFail() {
-
     }
 }
