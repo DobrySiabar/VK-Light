@@ -1,5 +1,5 @@
-
 import UIKit
+import VKSdkFramework
 
 class ProfileViewController: UIViewController {
     
@@ -18,14 +18,19 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.navigationController?.hidesBarsOnSwipe = false
-        tabBarController?.navigationController?.isNavigationBarHidden = true
+//        tabBarController?.navigationController?.hidesBarsOnSwipe = false
+//        tabBarController?.navigationController?.isNavigationBarHidden = true
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Выйти", style: .done, target: self, action: #selector(logout))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.navigationItem.rightBarButtonItem = nil
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.navigationController?.hidesBarsOnSwipe = false
-        tabBarController?.navigationController?.isNavigationBarHidden = true
+//        tabBarController?.navigationController?.hidesBarsOnSwipe = false
+//        tabBarController?.navigationController?.isNavigationBarHidden = true
         
         view.backgroundColor = .white
         setupProfileHeaderView()
@@ -33,6 +38,10 @@ class ProfileViewController: UIViewController {
             guard let response = data?.response.first else { return }
             self?.userResponse = response
         }
+    }
+    
+    @objc private func logout() {
+        VKSdk.forceLogout()
     }
     
     private func setupProfileHeaderView() {

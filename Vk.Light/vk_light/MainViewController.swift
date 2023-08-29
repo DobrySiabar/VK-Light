@@ -1,4 +1,5 @@
 import UIKit
+import VKSdkFramework
 
 class MainViewController: UIViewController {
     
@@ -12,6 +13,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         authenticationService.wakeUpSession()
+//        VKSdk.forceLogout()
     }
 }
 
@@ -24,8 +26,8 @@ extension MainViewController: AuthenticationServiceDelegate {
     
     func authenticationServiceSignIn() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "TabBar", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "tabBar") as! VKTabBarController
-        let nav = UINavigationController(rootViewController: nextViewController)
+        let mainTabViewController = storyBoard.instantiateViewController(withIdentifier: "tabBar") as! VKTabBarController
+        let nav = UINavigationController(rootViewController: mainTabViewController)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated:true)
     }

@@ -1,4 +1,3 @@
-
 import UIKit
 import VKSdkFramework
 
@@ -7,17 +6,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        print("Launched MainViewController from scene")
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let MmainViewController = MainViewController()
+        let mainViewController = MainViewController()
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        window?.rootViewController = MmainViewController
+        window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
-
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        print("Tried to open url from scene")
         if let url = URLContexts.first?.url {
+            print("Passed thru question")
             VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         }
     }

@@ -1,4 +1,3 @@
-
 import UIKit
 import VKSdkFramework
 
@@ -8,16 +7,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.makeKeyAndVisible()
-        let rootViewController = ConversationsViewController()
-        self.window?.rootViewController = rootViewController
-        self.window?.addSubview(rootViewController.view)
-        
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("Tried to open url from AppDelegate")
         VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         
         return true

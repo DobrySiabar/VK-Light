@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct FeedResponseWrapped: Decodable {
@@ -88,5 +87,3 @@ struct Group: Decodable, ProfileRepresenatable {
     
     var photo: String { return photo100 }
 }
-
-

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c8q-ZU-mp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c8q-ZU-mp0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_alpha" translatesAutoresizingMaskIntoConstraints="NO" id="emL-CR-a9Q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are using the alpha version of the program. This function will be implemented in the next versions. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sK7-5o-6Dq">
                                 <rect key="frame" x="20" y="593" width="374" height="200"/>
@@ -56,22 +56,34 @@
         <!--Лента-->
         <scene sceneID="0oy-e1-BN6">
             <objects>
-                <viewController storyboardIdentifier="feed" id="7zY-8F-l6b" customClass="FeedViewController" customModule="vk_light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feed" id="7zY-8F-l6b" customClass="NewsfeedViewController" customModule="vk_light" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5qe-Xn-y69">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-Vb-Ofg">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xMn-gS-HLh">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7zY-8F-l6b" id="tuQ-Jg-kGu"/>
+                                    <outlet property="delegate" destination="7zY-8F-l6b" id="VCV-CK-flK"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ysl-dU-waC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ysl-dU-waC" firstAttribute="trailing" secondItem="xMn-gS-HLh" secondAttribute="trailing" id="KN4-0B-xNV"/>
+                            <constraint firstItem="Ysl-dU-waC" firstAttribute="bottom" secondItem="xMn-gS-HLh" secondAttribute="bottom" id="SLd-LA-Vcp"/>
+                            <constraint firstItem="xMn-gS-HLh" firstAttribute="leading" secondItem="Ysl-dU-waC" secondAttribute="leading" id="naM-Hc-ne0"/>
+                            <constraint firstItem="xMn-gS-HLh" firstAttribute="top" secondItem="Ysl-dU-waC" secondAttribute="top" id="w4o-oU-865"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Лента" image="list.bullet.rectangle" catalog="system" id="0mZ-jT-GSN"/>
                     <navigationItem key="navigationItem" id="1E7-u6-vL5"/>
+                    <connections>
+                        <outlet property="newsfeedTableView" destination="xMn-gS-HLh" id="WBY-EI-4sL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pf-dd-GLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_alpha" translatesAutoresizingMaskIntoConstraints="NO" id="C4W-p9-3nP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are using the alpha version of the program. This function will be implemented in the next versions. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HE-lo-Vop">
                                 <rect key="frame" x="20" y="593" width="374" height="200"/>
@@ -166,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_alpha" translatesAutoresizingMaskIntoConstraints="NO" id="b7v-rv-6hL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are using the alpha version of the program. This function will be implemented in the next versions. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tm-3r-gmc">
                                 <rect key="frame" x="20" y="593" width="374" height="200"/>
@@ -206,7 +218,7 @@
         <image name="alien" width="30" height="30"/>
         <image name="bell" width="100" height="100"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="messages" width="100" height="100"/>
         <image name="vk_alpha" width="414" height="769"/>
         <systemColor name="systemBackgroundColor">

@@ -1,4 +1,4 @@
-
+/*
 import UIKit
 
 class PhotoGridPostCollectionViewCell: UICollectionViewCell {
@@ -32,3 +32,4 @@ class PhotoGridPostCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+*/

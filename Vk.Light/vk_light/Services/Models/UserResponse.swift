@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct UserResponseWrapped: Decodable {
@@ -10,5 +9,5 @@ struct UserResponse: Decodable {
     let id: Int
     let lastName: String
     let canAccessClosed, isClosed: Bool
-    let photo100: String
+    let photo100: String?
 }
